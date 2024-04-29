@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="score-main">
+
+            <br/>
+            <h4>Tries Left : {{2- g.user.failed_tries}}</h4>
+            <h1 class="score-head">Your Score</h1>
+            <div class="score-circle">
+                <h1>{{ g.user.marks }}</h1>
+            </div>
+            {% if status %}
+            <h1 class="congrats-cls">Congratulations! <i class="fas fa-glass-cheers"></i></h1>
+            
+            {% else %}
+            <h1 class="congrats-cls">You Lose Your Chance <i class="fas fa-solid fa-exclamation"></i> , Please Try Again</h1>
+            {% endif %}
+            <div class="redirect-links">
+                <a href="{{ url_for('home') }}"><i class='fas fa-angle-left'></i> Home</a>
+                <a href="{{url_for('question_first',topic_id=topic_id, id=0) }}"class="btn btn-primary " >Retake Test</a>
+            </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .center {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+  }
+</style>
+
+<div class="container mt-4">
+  <div class="center">{{ current }} / {{ total }}</div>
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      style="width: {{ progress }}%;"
+      aria-valuenow="{{ progress }}"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    ></div>
+  </div>
+</div>
+
+<div class="">
+  <form method="post" novalidate>
+    <h2 class="qnum pl-4">Lessons {{current}}</h2>
+    <div class="dotted-spaced"></div>
+    <hr />
+    <div class="p-4">
+      <p>{{l.lesson}}</p>
+      {% if l.video_Path %}
+      <h5>
+        <a href="{{ ''.join(['http://', l.video_Path]) }}" target="_blank"
+          >Watch Video</a
+        >
+      </h5>
+      {% endif %}
+    </div>
+
+
+    <div class="p-4">{{ form.submit(class="btn btn-primary btn-lg ") }}</div>
+  </form>
+
+</div>
+
+{% endblock %}

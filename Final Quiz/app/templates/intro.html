@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="home-div" >
+        <div class="intro-div p-4" style="height: 80%;">
+ 
+            <h1>Introduction </h1>
+            <p> In today's digital world, cybersecurity is more important than ever. Whether you're a tech enthusiast, a business professional, or simply someone who uses the internet daily, protecting yourself from cyber threats is essential. Our website offers a comprehensive range of cybersecurity learning resources, designed to help you understand online security risks, build strong defenses, and navigate the digital landscape with confidence.
+            </p>
+            
+            <a href="{{ url_for('topics')}}">Choose Your Topic</a>
+        </div>
+    </div>
+{% endblock %}

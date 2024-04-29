@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="home-div">
+        <img src="{{ url_for('static', filename='images/home_page.jpg') }}" class="home-img">
+        <div class="info-div p-4">
+            {% if g.user %}
+                <h1>Welcome {{ g.user.username.capitalize() }}, </h1>
+
+            {% else %}
+                <h1>Let's Go, </h1>
+            {% endif %}
+            <h4> Explore the Journey With Us!
+            </h4>
+            {% if g.user %}
+                <a href="{{ url_for('intro')}}">Let's Start</a>
+            {% else %}
+                <a href="{{ url_for('login')}}">Let's Go</a>
+            {% endif %}
+            
+        </div>
+    </div>
+{% endblock %}

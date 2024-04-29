@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .center {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+  }
+</style>
+<div style="height: 80vh">
+  <div class="container mt-4">
+    <div class="center">{{ current }} / {{ total }}</div>
+    <div class="progress">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: {{ progress }}%;"
+        aria-valuenow="{{ progress }}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+  </div>
+  <div class="ques-div">
+    <form method="post" novalidate>
+      <h2 class="qnum">Question {{current}}</h2>
+      <div class="dotted-spaced"></div>
+      <hr />
+      <h1 class="ques-heading">{{q.ques}}</h1>
+      <div class="options-div">{{ form.options(class="list-unstyled") }}</div>
+      {{ form.submit(class="btn btn-primary btn-lg sub-btn") }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

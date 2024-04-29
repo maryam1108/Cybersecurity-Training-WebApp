@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mob-styles.css') }}">
+    </head>
+
+    {% if g.user %}
+    <style>
+        .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+    </style>
+    
+    <footer class="bg-dark text-white py-4 footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Useful Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Blog</a></li>
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Social Media</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Facebook</a></li>
+              <li><a href="#" class="text-white">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% endif %}
+
+    
+</html>
